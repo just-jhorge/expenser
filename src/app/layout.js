@@ -1,6 +1,4 @@
-import { ToastContainer } from "react-toastify";
 import Providers from "@/redux/Providers";
-import "react-toastify/dist/ReactToastify.css";
 import "./globals.css";
 
 export const metadata = {
@@ -11,9 +9,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body>
+            <body suppressHydrationWarning={true}>
                 <Providers>{children}</Providers>
-                <ToastContainer autoClose={1500} closeOnClick />
             </body>
         </html>
     );

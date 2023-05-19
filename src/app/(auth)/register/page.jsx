@@ -46,7 +46,7 @@ export default function Page() {
                         <Input label="Password" name="password" type="password" placeholder="******" />
                         <Input label="Confirm Password" name="confirmPassword" type="password" placeholder="******" />
                         <div className="flex justify-between text-sm">
-                            <Link className="text-blue-500" href="/" prefetch={false}>
+                            <Link className="text-blue-500" href="/">
                                 Go Home
                             </Link>
                             <p>

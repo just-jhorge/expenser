@@ -1,5 +1,6 @@
 "use client";
 
+import * as Yup from "yup";
 import { Form, Formik } from "formik";
 import { Input, Radio, Select } from "@/components/InputFields/Input";
 import { useState } from "react";
@@ -16,21 +17,45 @@ export default function Page() {
     const initialValues = {
         budgetId: "",
         budgetName: "",
+        budgetAmount: "",
         budgetStartDate: "",
         budgetEndDate: "",
         budgetCategory: "",
         budgetStatus: "",
     };
 
+    const validationSchema = Yup.object().shape({
+        budgetName: Yup.string().required("Required!"),
+        budgetStartDate: Yup.date().required("Required!"),
+        budgetEndDate: Yup.date().required("Required!"),
+        budgetAmount: Yup.number().required("Required!"),
+        budgetCategory: Yup.string()
+            .oneOf(["savings", "expenditure"], "Please select a category")
+            .required("Required!"),
+        budgetStatus: Yup.boolean().required("Required!"),
+    });
+
     const handleSubmit = (values) => {
-        dispatch(addToBudget({ ...values, budgetId: uuidv4(), budgetExpenses: [] }));
+        console.log("budget added");
+        dispatch(
+            addToBudget({
+                ...values,
+                budgetId: uuidv4(),
+                budgetExpenses: [
+                    { id: 1, expenseName: "Food and Drinks", expenseCategory: "expenditure", expenseAmount: 1300 },
+                    { id: 2, expenseName: "Transportation", expenseCategory: "expenditure", expenseAmount: 250 },
+                    { id: 3, expenseName: "Enjoyment", expenseCategory: "expenditure", expenseAmount: 500 },
+                    { id: 4, expenseName: "Accomodation", expenseCategory: "expenditure", expenseAmount: 3400 },
+                ],
+            })
+        );
         router.push("/dashboard/budgets");
     };
 
     return (
         <div className="h-full flex-center">
             <div className="p-10 w-full md:w-2/5 bg-white rounded-lg shadow-lg">
-                <Formik initialValues={initialValues} onSubmit={handleSubmit}>
+                <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
                     <Form className="space-y-5">
                         <Input label="Budget Name" name="budgetName" type="text" placeholder="Budget for January" />
                         <div className="w-full grid grid-cols-2 gap-2">
@@ -42,7 +67,7 @@ export default function Page() {
                             />
                             <Input label="Budget End Date" name="budgetEndDate" type="date" placeholder="31/01/1970" />
                         </div>
-                        <Input label="Budget Amount" name="budgetAmount" type="number" placeholder="GHC10000" />
+                        <Input label="Budget Amount" name="budgetAmount" type="number" placeholder="GHC10,000" />
                         <Select label="Budget Category" name="budgetCategory">
                             <option value="">Select budget category</option>
                             <option value="savings">Savings</option>

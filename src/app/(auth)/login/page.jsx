@@ -55,7 +55,7 @@ export default function Page() {
                             <div>
                                 New?{" "}
                                 <span className="text-blue-500">
-                                    <Link href="/register" prefetch={false}>
+                                    <Link href="/register">
                                         Sign up
                                     </Link>
                                 </span>

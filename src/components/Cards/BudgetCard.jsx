@@ -35,8 +35,20 @@ const BudgetCard = ({
                     <div className="w-full mb-5">
                         <h3 className="text-2xl font-bold mb-3 truncate">{budgetTitle}</h3>
                         <p>Amount: {currencyFormatter(budgetAmount)}</p>
-                        <p>Spent: {currencyFormatter(320)}</p>
-                        <p>Remaining: {currencyFormatter(380)}</p>
+                        <>
+                            {budgetCategory == "expenditure" && (
+                                <>
+                                    <p>Spent: {currencyFormatter(320)}</p>
+                                    <p>Remaining: {currencyFormatter(380)}</p>
+                                </>
+                            )}
+                            {budgetCategory == "savings" && (
+                                <>
+                                    <p>Savings: {currencyFormatter(320)}</p>
+                                    <p>Remaining: {currencyFormatter(380)}</p>
+                                </>
+                            )}
+                        </>
                         <p>
                             Status:{" "}
                             <span

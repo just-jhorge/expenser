@@ -11,12 +11,14 @@ const budgetsSlice = createSlice({
     initialState,
     reducers: {
         addToBudget: (state, action) => {
-            state.budgets = [...state.budgets, action.payload];
+            state.budgets = [action.payload, ...state.budgets];
         },
         removeFromBudgets: (state, action) => {
             state.budgets = state.budgets.filter((budget) => budget.budgetId !== action.payload);
         },
-        addToBudgetExpenses: (state, action) => {},
+        addToBudgetExpenses: () => {
+            console.log("Add expenses functionality to be added");
+        },
     },
 });
 

@@ -1,13 +1,13 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { AiOutlineSetting, AiOutlineLogout } from "react-icons/ai";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { GrClose } from "react-icons/gr";
 import { BsCalculator } from "react-icons/bs";
 import { RiAddFill } from "react-icons/ri";
-import Link from "next/link";
 import { useDispatch } from "react-redux";
 import { logout } from "@/redux/features/auth/authSlice";
 
@@ -40,22 +40,22 @@ function Navbar() {
                         </button>
                     </div>
                     <ul className="mt-12 space-y-8">
-                        <li className="sidebar-link">
-                            <BsCalculator className="text-2xl" />
-                            <Link href="/dashboard/budgets" prefetch={false}>
-                                Budgets
+                        <li>
+                            <Link className="sidebar-link" href="/dashboard/budgets">
+                                <BsCalculator className="text-2xl" />
+                                <p>Budgets</p>
                             </Link>
                         </li>
-                        <li className="sidebar-link">
-                            <RiAddFill className="text-2xl" />
-                            <Link href="/dashboard/add-budget" prefetch={false}>
-                                Add Budget
+                        <li>
+                            <Link className="sidebar-link" href="/dashboard/add-budget">
+                                <RiAddFill className="text-2xl" />
+                                <p>Add Budget</p>
                             </Link>
                         </li>
-                        <li className="sidebar-link">
-                            <AiOutlineSetting className="text-2xl" />
-                            <Link href="/dashboard/budgets" prefetch={false}>
-                                Settings
+                        <li>
+                            <Link className="sidebar-link" href="/dashboard/settings">
+                                <AiOutlineSetting className="text-2xl" />
+                                <p>Settings</p>
                             </Link>
                         </li>
                     </ul>
@@ -83,7 +83,7 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className="sidebar-link">
-                            <Link title="Settings" href="/dashboard/abudgets" prefetch={false}>
+                            <Link title="Settings" href="/dashboard/settings" prefetch={false}>
                                 <AiOutlineSetting className="text-2xl" />
                             </Link>
                         </li>

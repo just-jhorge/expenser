@@ -28,7 +28,8 @@ export default function Page({ params: { id } }) {
     });
 
     const handleSubmit = (values) => {
-        dispatch(addToBudgetExpenses({ ...values, id }));
+        // dispatch(addToBudgetExpenses({ ...values, id }));
+        console.log(values);
         router.push(`/dashboard/budgets/${id}`);
     };
 
