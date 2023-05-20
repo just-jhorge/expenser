@@ -34,15 +34,17 @@ export default function Page({ params: { id } }) {
                 <>
                     <div className="mb-10 flex items-start justify-between">
                         <div>
-                            <h3 className="text-5xl font-medium mb-4">{budget.budgetName}</h3>
-                            <p className="text-3xl">Total amount allocated: {currencyFormatter(budget.budgetAmount)}</p>
+                            <h3 className="text-2xl md:text-5xl font-medium mb-1 md:mb-4">{budget.budgetName}</h3>
+                            <p className="text-sm md:text-3xl">
+                                Total amount allocated: {currencyFormatter(budget.budgetAmount)}
+                            </p>
                         </div>
-                        <div className="space-x-10">
-                            <button title="Edit" className="p-3">
-                                <AiOutlineEdit className="text-5xl" />
+                        <div className="flex items-center space-x-4 md:space-x-10">
+                            <button title="Edit" className="p-1 md:p-3">
+                                <AiOutlineEdit className="text-2xl md:text-5xl" />
                             </button>
-                            <button onClick={() => handleDelete(id)} title="Delete" className="p-3">
-                                <AiOutlineDelete className="text-5xl text-red-500" />
+                            <button onClick={() => handleDelete(id)} title="Delete" className="p-1 md:p-3">
+                                <AiOutlineDelete className="text-2xl md:text-5xl text-red-500" />
                             </button>
                         </div>
                     </div>
@@ -57,12 +59,12 @@ export default function Page({ params: { id } }) {
                             </div>
                         ) : (
                             <>
-                                <div className="mb-5">
+                                <p className="text-sm md:text-base mb-5">
                                     Add a new expense
                                     <Link className="text-blue-500" href={`/dashboard/budgets/${id}/add-expense`}>
                                         👉🏾 here
                                     </Link>
-                                </div>
+                                </p>
                                 <table className="w-full text-sm text-left text-black">
                                     <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                                         <tr>

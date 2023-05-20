@@ -39,13 +39,13 @@ export default function Page() {
     return (
         <main className="signup h-screen w-screen flex-center">
             <div className="bg-white w-6/7 md:w-1/4 p-5 md:p-10 rounded-md shadow-md">
-                <h3 className="text-center text-3xl mb-10">Expenser - Sign up</h3>
+                <h3 className="text-center text-xl md:text-3xl mb-10">Expenser - Sign up</h3>
                 <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
                     <Form className="space-y-5">
                         <Input label="Email" name="email" type="text" placeholder="john.doe@company.com" />
                         <Input label="Password" name="password" type="password" placeholder="******" />
                         <Input label="Confirm Password" name="confirmPassword" type="password" placeholder="******" />
-                        <div className="flex justify-between text-sm">
+                        <div className="flex justify-between text-xs md:text-sm">
                             <Link className="text-blue-500" href="/">
                                 Go Home
                             </Link>
@@ -56,7 +56,10 @@ export default function Page() {
                                 </span>
                             </p>
                         </div>
-                        <button className="w-full bg-gray-800 text-white py-2 rounded-md" type="submit">
+                        <button
+                            className="w-full bg-gray-800 text-xs md:text-base text-white py-3 rounded-md"
+                            type="submit"
+                        >
                             {isLoading ? "Loading..." : "Login"}
                         </button>
                     </Form>

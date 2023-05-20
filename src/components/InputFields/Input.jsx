@@ -5,11 +5,11 @@ export const Input = ({ label, ...props }) => {
 
     return (
         <div className="w-full">
-            <label className="block mb-2 text-sm font-medium text-gray-800" htmlFor={props.name}>
+            <label className="block mb-2 text-xs md:text-sm font-medium text-gray-800" htmlFor={props.name}>
                 {label}
             </label>
             <input
-                className="bg-gray-50 border border-gray-300 text-sm rounded-md block w-full p-2.5"
+                className="bg-gray-50 border border-gray-300 text-xs md:text-sm rounded-md block w-full p-2.5"
                 {...field}
                 {...props}
             />
