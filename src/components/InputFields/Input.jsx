@@ -9,7 +9,7 @@ export const Input = ({ label, ...props }) => {
                 {label}
             </label>
             <input
-                className="bg-gray-50 border border-gray-300 text-xs md:text-sm rounded-md block w-full p-2.5"
+                className="bg-gray-50 border border-gray-300 text-xs md:text-sm rounded-md block w-full p-2.5 appearance-none"
                 {...field}
                 {...props}
             />
