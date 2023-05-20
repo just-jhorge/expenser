@@ -8,7 +8,6 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { login } from "@/redux/features/auth/authSlice";
-import { toast } from "react-toastify";
 
 export default function Page() {
     const [isLoading, setIsLoading] = useState(false);
@@ -30,7 +29,6 @@ export default function Page() {
             setIsLoading(true);
             if (values.email == "sarpongk247@gmail.com" && values.password == "111111") {
                 dispatch(login());
-                toast.success("Logged in successfully");
                 router.push("/dashboard/budgets");
             } else {
                 alert("Invalid email or password");
@@ -55,9 +53,7 @@ export default function Page() {
                             <div>
                                 New?{" "}
                                 <span className="text-blue-500">
-                                    <Link href="/register">
-                                        Sign up
-                                    </Link>
+                                    <Link href="/register">Sign up</Link>
                                 </span>
                             </div>
                         </div>

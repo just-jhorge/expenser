@@ -12,7 +12,6 @@ export default function Page({ params: { id } }) {
     const router = useRouter();
     const { budgets } = useSelector((state) => state.budgets);
     const budget = budgets.filter((budget) => budget.budgetId == id)[0];
-    console.log(budget);
 
     const handleDelete = (id) => {
         dispatch(removeFromBudgets(id));
@@ -80,7 +79,7 @@ export default function Page({ params: { id } }) {
                                     </thead>
                                     <tbody>
                                         {budget.budgetExpenses.map((expense) => (
-                                            <tr key={expense.id} className="bg-white border-b">
+                                            <tr key={expense.expenseId} className="bg-white border-b">
                                                 <th
                                                     scope="row"
                                                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"

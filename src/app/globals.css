@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: poppins;
+    src: url(../fonts/poppins/Poppins-Regular.ttf);
+}
+
+html {
+    font-family: "poppins", sans-serif;
+}
+
 .link-btn {
     @apply border border-blue-500 rounded-md px-4 py-2 text-blue-500 text-sm md:text-xl;
 }

@@ -1,12 +1,13 @@
 "use client";
 
 import * as Yup from "yup";
+import { v4 as uuidv4 } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { Form, Formik } from "formik";
 import { Input, Select } from "@/components/InputFields/Input";
 import { useState } from "react";
-import { addToBudgetExpenses } from "@/redux/features/budgets/budgetsSlice";
 import { useRouter } from "next/navigation";
+import { addToBudgetExpenses } from "@/redux/features/budgets/budgetsSlice";
 
 export default function Page({ params: { id } }) {
     const dispatch = useDispatch();
@@ -16,6 +17,7 @@ export default function Page({ params: { id } }) {
     const budget = budgets.filter((budget) => budget.budgetId == id)[0];
 
     const initialValues = {
+        expenseId: "",
         expenseName: "",
         expenseCategory: "",
         expenseAmount: "",
@@ -28,8 +30,7 @@ export default function Page({ params: { id } }) {
     });
 
     const handleSubmit = (values) => {
-        // dispatch(addToBudgetExpenses({ ...values, id }));
-        console.log(values);
+        dispatch(addToBudgetExpenses({ ...values, id, expenseId: uuidv4() }));
         router.push(`/dashboard/budgets/${id}`);
     };
 

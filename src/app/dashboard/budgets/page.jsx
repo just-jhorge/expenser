@@ -25,6 +25,7 @@ export default function Page() {
                             budgetTitle={budget.budgetName}
                             budgetAmount={budget.budgetAmount}
                             budgetCategory={budget.budgetCategory}
+                            budgetExpenses={budget.budgetExpenses}
                             budgetStatus={budget.budgetStatus}
                             budgetStartDate={budget.budgetStartDate}
                             budgetEndDate={budget.budgetEndDate}

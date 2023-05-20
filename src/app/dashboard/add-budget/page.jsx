@@ -36,17 +36,11 @@ export default function Page() {
     });
 
     const handleSubmit = (values) => {
-        console.log("budget added");
         dispatch(
             addToBudget({
                 ...values,
                 budgetId: uuidv4(),
-                budgetExpenses: [
-                    { id: 1, expenseName: "Food and Drinks", expenseCategory: "expenditure", expenseAmount: 1300 },
-                    { id: 2, expenseName: "Transportation", expenseCategory: "expenditure", expenseAmount: 250 },
-                    { id: 3, expenseName: "Enjoyment", expenseCategory: "expenditure", expenseAmount: 500 },
-                    { id: 4, expenseName: "Accomodation", expenseCategory: "expenditure", expenseAmount: 3400 },
-                ],
+                budgetExpenses: [],
             })
         );
         router.push("/dashboard/budgets");
