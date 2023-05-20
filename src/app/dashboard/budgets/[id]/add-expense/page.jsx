@@ -36,7 +36,7 @@ export default function Page({ params: { id } }) {
 
     return (
         <div className="h-full w-full flex-center">
-            <div className="w-1/3">
+            <div className="w-full md:w-1/3">
                 <p className="mb-7 text-center">
                     Add a new expense/saving for <span className="font-bold italic">{budget.budgetName}</span>
                 </p>

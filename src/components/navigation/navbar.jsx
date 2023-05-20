@@ -45,19 +45,19 @@ function Navbar() {
                     <div className="container">
                         <ul className="mt-5 space-y-7">
                             <li>
-                                <Link className="sidebar-link" href="/dashboard/budgets">
+                                <Link className="sidebar-link" href="/dashboard/budgets" onClick={toggleTopNav}>
                                     <BsCalculator className="text-2xl" />
                                     <p>Budgets</p>
                                 </Link>
                             </li>
                             <li>
-                                <Link className="sidebar-link" href="/dashboard/add-budget">
+                                <Link className="sidebar-link" href="/dashboard/add-budget" onClick={toggleTopNav}>
                                     <RiAddFill className="text-2xl" />
                                     <p>Add Budget</p>
                                 </Link>
                             </li>
                             <li>
-                                <Link className="sidebar-link" href="/dashboard/settings">
+                                <Link className="sidebar-link" href="/dashboard/settings" onClick={toggleTopNav}>
                                     <AiOutlineSetting className="text-2xl" />
                                     <p>Settings</p>
                                 </Link>

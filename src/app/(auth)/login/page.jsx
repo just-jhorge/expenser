@@ -27,7 +27,7 @@ export default function Page() {
     const handleSubmit = (values) => {
         try {
             setIsLoading(true);
-            if (values.email == "sarpongk247@gmail.com" && values.password == "111111") {
+            if (values.email == "admin@email.com" && values.password == "111111") {
                 dispatch(login());
                 router.push("/dashboard/budgets");
             } else {

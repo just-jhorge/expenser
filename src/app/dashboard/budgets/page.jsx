@@ -6,6 +6,8 @@ import { useSelector } from "react-redux";
 
 export default function Page() {
     const { budgets } = useSelector((state) => state.budgets);
+    const { user } = useSelector((state) => state.user);
+    console.log(user);
 
     return (
         <div>

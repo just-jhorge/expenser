@@ -51,12 +51,12 @@ export default function Page({ params: { id } }) {
 
                     <div className="relative overflow-x-auto">
                         {budget.budgetExpenses.length == 0 ? (
-                            <div>
+                            <p className="text-sm md:text-base">
                                 You have no expenses/savings for this budget. Create one{" "}
                                 <Link className="text-blue-500" href={`/dashboard/budgets/${id}/add-expense`}>
                                     👉🏾 here
                                 </Link>
-                            </div>
+                            </p>
                         ) : (
                             <>
                                 <p className="text-sm md:text-base mb-5">
@@ -81,7 +81,10 @@ export default function Page({ params: { id } }) {
                                     </thead>
                                     <tbody>
                                         {budget.budgetExpenses.map((expense) => (
-                                            <tr key={expense.expenseId} className="bg-white border-b">
+                                            <tr
+                                                key={expense.expenseId}
+                                                className="text-xs md:text-base bg-white border-b"
+                                            >
                                                 <th
                                                     scope="row"
                                                     className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
@@ -99,7 +102,7 @@ export default function Page({ params: { id } }) {
                                         <tr className="bg-white">
                                             <th
                                                 scope="row"
-                                                className="px-6 py-4 font-bold text-lg text-gray-900 whitespace-nowrap"
+                                                className="px-6 py-4 font-bold text-sm md:text-lg text-gray-900 whitespace-nowrap"
                                             >
                                                 Total Amount:{" "}
                                             </th>

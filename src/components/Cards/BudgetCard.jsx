@@ -34,10 +34,10 @@ const BudgetCard = ({
                 </div>
                 <div className="w-full flex flex-col items-start justify-between">
                     <div className="w-full mb-8">
-                        <h3 className="text-2xl font-semibold mb-7 truncate">{budgetTitle}</h3>
-                        <p className="mb-2">Amount: {currencyFormatter(budgetAmount)}</p>
+                        <h3 className="text-base md:text-2xl font-semibold mb-7 truncate">{budgetTitle}</h3>
+                        <p className="text-xs md:text-base mb-2">Amount: {currencyFormatter(budgetAmount)}</p>
                         <hr />
-                        <div className="my-2">
+                        <div className="text-xs md:text-base my-2">
                             {budgetCategory == "expenditure" && (
                                 <>
                                     <p>
@@ -72,7 +72,7 @@ const BudgetCard = ({
                             )}
                         </div>
                         <hr />
-                        <p className="mt-2 text-sm">
+                        <p className="text-xs md:text-base mt-2">
                             Status:{" "}
                             <span className="italic text-gray-500">
                                 {breakDown(budgetAmount, budgetExpenses, budgetCategory).text}
